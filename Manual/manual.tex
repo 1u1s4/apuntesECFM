@@ -1,0 +1,486 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{graphicx}
+\geometry{a4paper, margin=1in}
+\usepackage{xargs}
+\usepackage{xstring}
+\usepackage{amsfonts}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{dirtree}
+\usepackage{comandos}
+
+
+\title{Manual de Uso}
+\author{Luis Alfredo Alvarado Rodríguez}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introducción}
+La presente guía sirve como un recurso integral diseñado para facilitar el uso de la plantilla, creada para agilizar la preparación de notas de clase. Con una estructura bien definida y una serie de comandos personalizables, esta plantilla se adapta a una amplia gama de necesidades, ofreciendo una solución eficiente para presentar contenido complejo de manera clara y profesional. A través de este manual, se brindarán instrucciones detalladas y ejemplos prácticos para que usuarios de todos los niveles, desde principiantes hasta avanzados, puedan maximizar las capacidades de la plantilla, mejorando así la calidad y la eficiencia en la creación de sus documentos.
+
+\section{Requisitos Previos}
+Antes de comenzar a trabajar con la plantilla \LaTeX, es esencial asegurarse de que se cumplan ciertos requisitos previos para garantizar una experiencia de uso sin contratiempos. Primero, se requiere la instalación de una distribución \LaTeX completa, como TeX Live, MiKTeX, o MacTeX, dependiendo del sistema operativo que se esté utilizando (Windows, macOS o Linux, respectivamente). Estas distribuciones incluyen el motor de \LaTeX junto con una amplia colección de paquetes y fuentes necesarios para la compilación de documentos.\\
+
+Además, se recomienda contar con un editor de texto especializado en \LaTeX, como TeXstudio, TeXmaker o Visual Studio Code con la extensión LaTeX Workshop, para facilitar la edición y compilación de los documentos. Estos editores ofrecen características útiles como resaltado de sintaxis, autocompletado de comandos y vista previa en tiempo real del documento.\\
+
+Es también conveniente tener conocimientos básicos sobre la sintaxis de \LaTeX y su funcionamiento, incluyendo la estructura de los documentos, el uso de comandos y entornos, y la inclusión de elementos gráficos y tablas. Si bien la plantilla está diseñada para ser intuitiva, un entendimiento fundamental de \LaTeX permitirá una personalización más profunda y una resolución eficaz de posibles problemas.\\
+
+Finalmente, para la gestión de bibliografías, se aconseja familiarizarse con BibTeX o BibLaTeX, sistemas que permiten organizar las referencias bibliográficas de manera eficiente. Aunque no es estrictamente necesario para comenzar a trabajar con la plantilla, el manejo de estas herramientas enriquecerá significativamente la calidad de los documentos académicos producidos.\\
+
+Al cumplir con estos requisitos previos, estarás bien preparado para aprovechar al máximo las capacidades de la plantilla y optimizar tu flujo de trabajo en la creación de documentos \LaTeX de alta calidad.
+
+\section{Estructura de la Plantilla}
+La estructura organizativa de la plantilla se presenta a continuación, ilustrando la disposición de los directorios y archivos para facilitar su uso y personalización:
+
+\dirtree{%
+    .1 plantilla/.
+    .2 mi\_documento.tex. 
+    .2 capitulos/.
+    .3 capitulo\_1.tex. 
+    .3 capitulo\_2.tex. 
+    .2 imagenes/.
+    .3 imagen\_1.png. 
+    .3 imagen\_2.jpg. 
+    .2 bibliografia/.
+    .3 referencias.bib. 
+    .2 estilos/.
+    .3 formato.sty. 
+    .3 comandos.sty. 
+}
+
+Cada componente de la estructura tiene un propósito específico:
+\begin{itemize}
+    \item \textbf{mi\_documento.tex}: El archivo principal que integra todos los componentes del documento.
+    \item \textbf{capitulos/}: Directorio para los archivos de los capítulos o secciones del documento.
+    \item \textbf{imagenes/}: Carpeta para almacenar todas las imágenes y figuras utilizadas.
+    \item \textbf{bibliografia/}: Alberga el archivo de bibliografía para la gestión de referencias.
+    \item \textbf{estilos/}: Incluye archivos de estilo personalizado y definiciones de comandos para la personalización del documento.
+\end{itemize}
+
+Esta estructura bien definida asegura una organización clara del contenido y facilita la personalización y expansión de la plantilla según las necesidades específicas del usuario.
+
+\section{Cómo Empezar}
+Comenzar a trabajar con esta plantilla es un proceso sencillo y directo. A continuación, se detallan los pasos para configurar tu entorno de trabajo y empezar a redactar tu documento:
+
+\subsection{Instalación de \LaTeX}
+
+El primer paso es asegurarse de que tienes una distribución \LaTeX instalada en tu sistema. Las distribuciones más comunes incluyen TeX Live para sistemas Unix y Windows, MiKTeX para Windows y MacTeX para macOS. Puedes descargarlas desde sus respectivos sitios web:
+
+\begin{itemize}
+\item TeX Live: \url{https://www.tug.org/texlive/}
+\item MiKTeX: \url{https://miktex.org/}
+\item MacTeX: \url{http://www.tug.org/mactex/}
+\end{itemize}
+
+\subsection{Configuración del Editor \LaTeX}
+
+Aunque puedes escribir \LaTeX en cualquier editor de texto, se recomienda utilizar un editor especializado en \LaTeX para facilitar la escritura, compilación y visualización de tu documento. Algunos editores populares incluyen TeXstudio, TeXmaker y Visual Studio Code con la extensión \LaTeX Workshop. Estos editores ofrecen características útiles como resaltado de sintaxis, autocompletado de comandos y vista previa en tiempo real.
+
+\subsection{Descarga y Descompresión de la Plantilla}
+
+Para comenzar a trabajar con la plantilla, primero necesitas descargarla desde el repositorio de GitHub dedicado a la plantilla. Visita el siguiente enlace para acceder al repositorio:
+
+\begin{center}
+\url{https://github.com/1u1s4/ECFM_notas}
+\end{center}
+
+Tienes dos opciones para descargar la plantilla:
+
+\subsubsection{Descarga Directa}
+
+Haz clic en el botón Code y selecciona Download ZIP desde el menú desplegable. Esto descargará un archivo comprimido que contiene todos los archivos de la plantilla. Descomprime el archivo en tu sistema y deberías obtener una estructura de directorios similar a la descrita en la sección \textit{Estructura de la Plantilla}.
+
+\subsubsection{Uso de Git Clone}
+
+Si estás familiarizado con Git, puedes clonar el repositorio directamente a tu máquina local, lo que facilita la actualización de la plantilla en el futuro. Abre una terminal o línea de comandos y ejecuta el siguiente comando:
+
+\begin{verbatim}
+git clone https://github.com/1u1s4/ECFM_notas.git
+\end{verbatim}
+
+Esto creará una copia local del repositorio en tu sistema, incluyendo todos los archivos de la plantilla en una nueva carpeta llamada ECFM\_notas. Puedes navegar a esta carpeta y comenzar a trabajar con la plantilla inmediatamente.\\
+
+Ambas opciones te proporcionarán todos los archivos necesarios para comenzar a utilizar la plantilla. Asegúrate de revisar los archivos y familiarizarte con la organización de la plantilla para facilitar su uso y personalización.
+
+\subsection{Abrir y Compilar el Documento Principal}
+
+Abre el archivo mi\_documento.tex en tu editor \LaTeX. Este archivo servirá como el punto de entrada para tu documento. Para compilarlo y visualizar el PDF resultante, utiliza la función de compilación de tu editor, que generalmente se encuentra en un menú o como un botón en la interfaz. La mayoría de los editores \LaTeX utilizan pdflatex para compilar, pero asegúrate de consultar la documentación de tu editor para obtener instrucciones específicas.
+
+\subsection{Personalización y Redacción}
+
+Una vez compilado el documento principal sin errores, puedes comenzar a personalizarlo y añadir tu propio contenido. Modifica el título, los autores y la fecha en el archivo principal y luego procede a editar los archivos de capítulo en la carpeta capitulos/ para añadir el contenido de tu documento.
+
+Siguiendo estos pasos, estarás bien encaminado para aprovechar al máximo la plantilla y crear documentos de alta calidad con \LaTeX.
+
+\section{Personalización de la Plantilla}
+
+Esta plantilla está diseñada para ser flexible y adaptable a tus necesidades específicas. A continuación, se detallan algunas de las formas en las que puedes personalizar la plantilla para que se ajuste mejor a tu proyecto.
+
+\subsection{Modificar el Preámbulo}
+
+El preámbulo del documento es donde se definen las configuraciones globales, se cargan los paquetes necesarios y se establecen los comandos personalizados. Al modificar el preámbulo, puedes ajustar aspectos fundamentales de tu documento.
+
+\begin{itemize}
+\item \textbf{Cargar Paquetes Adicionales:} Si necesitas funcionalidades adicionales, como soporte para gráficos o formatos de texto especiales, puedes incluir paquetes adicionales utilizando el comando \textbackslash usepackage{nombre\_del\_paquete}.
+\item \textbf{Definir o Modificar Comandos:} La plantilla puede incluir comandos personalizados para facilitar tareas repetitivas. Puedes modificar estos comandos o definir nuevos según tus necesidades con \textbackslash newcommand o \textbackslash renewcommand.
+\item \textbf{Ajustes de Idioma y Codificación:} Asegúrate de que el idioma y la codificación de caracteres sean los adecuados para tu documento, ajustando los paquetes babel e inputenc si es necesario.
+\end{itemize}
+
+\subsection{Ajustar el Diseño del Documento}
+
+La apariencia visual de tu documento, incluyendo márgenes, encabezados y pies de página, se puede personalizar para cumplir con los requisitos específicos de tu proyecto o institución.
+
+\begin{itemize}
+\item \textbf{Márgenes:} Utiliza el paquete geometry para ajustar los márgenes del documento. Por ejemplo, \textbackslash usepackage{geometry} seguido de \textbackslash geometry{margin=1in} establecerá todos los márgenes a una pulgada.
+\item \textbf{Encabezados y Pies de Página:} El paquete fancyhdr te permite personalizar los encabezados y pies de página. Define estilos para los encabezados y pies de página usando \textbackslash fancyhead{} y \textbackslash fancyfoot{}, y luego aplica estos estilos con \textbackslash pagestyle{fancy}.
+\item \textbf{Estilo de Títulos de Secciones:} El paquete titlesec puede modificar la apariencia de los títulos de las secciones, subsecciones, etc. Usa comandos como \textbackslash titleformat*{\\section}{\textbackslash Large\textbackslash bfseries} para cambiar el tamaño de fuente y el estilo de los títulos de las secciones.
+\end{itemize}
+
+Estas personalizaciones te permitirán adaptar la plantilla a tus preferencias y requisitos, mejorando la presentación de tu trabajo. Recuerda que cada cambio debe ser probado compilando el documento para asegurar que el resultado final sea el deseado.
+
+
+\section{Uso de Capítulos, Secciones y Subsecciones}
+
+La organización del contenido en capítulos, secciones y subsecciones es fundamental para la claridad y la estructura lógica de cualquier documento académico o científico. Nuestra plantilla facilita esta organización mediante comandos específicos de \LaTeX que te permiten dividir tu texto de manera coherente.
+
+\subsection{Capítulos}
+
+Para documentos como tesis o libros que requieren una división en capítulos, puedes utilizar el comando \textbackslash chapter\{Nombre del Capítulo\}. Este comando inicia un nuevo capítulo y automáticamente lo añade al Índice de Contenidos. Por ejemplo:
+
+\begin{verbatim}
+\chapter{Introducción}
+Este es el texto de tu introducción...
+\end{verbatim}
+
+Cada capítulo comenzará en una nueva página y tendrá su título formatado según las definiciones de estilo de la plantilla.
+
+\subsection{Secciones}
+
+Dentro de cada capítulo, puedes organizar tu contenido en secciones utilizando el comando \textbackslash section\{Nombre de la Sección\}. Las secciones proporcionan un nivel de subdivisión que ayuda a agrupar temas relacionados o ideas dentro de un capítulo. Por ejemplo:
+
+\begin{verbatim}
+\section{Antecedentes Históricos}
+Este es el texto que describe los antecedentes...
+\end{verbatim}
+
+\subsection{Subsecciones}
+
+Para detalles más específicos o para subdividir aún más el contenido de una sección, puedes utilizar subsecciones con el comando \textbackslash subsection\{Nombre de la Subsección\}. Las subsecciones permiten una mayor profundidad en la organización del contenido y facilitan la navegación a través del documento. Por ejemplo:
+
+\begin{verbatim}
+\subsection{Teoría de la Relatividad}
+Este texto podría detallar aspectos específicos de la Teoría...
+\end{verbatim}
+
+\subsection{Uso Adicional: Subsubsecciones y Párrafos}
+
+Para una división aún más detallada, puedes emplear \textbackslash subsubsection\{Nombre de la Subsubsección\} y \textbackslash paragraph\{Nombre del Párrafo\} para niveles inferiores de contenido. Sin embargo, se recomienda usar estos niveles con moderación para mantener la claridad y la legibilidad del documento.
+
+\begin{verbatim}
+\subsubsection{Efectos Especiales}
+Este texto se enfocaría en detalles muy específicos...
+
+\paragraph{Dilatación del Tiempo}
+Aquí podrías explicar la dilatación del tiempo...
+\end{verbatim}
+
+Al utilizar estos comandos para estructurar tu documento, aseguras una organización lógica y una presentación clara de tus ideas, facilitando la comprensión por parte del lector.
+
+
+\section{Inclusión de Elementos Gráficos}
+
+La inclusión de elementos gráficos como imágenes, tablas y figuras es esencial para complementar y reforzar el contenido textual de tu documento. Esta sección te guiará sobre cómo insertar estos elementos en tu documento utilizando nuestra plantilla LaTeX.
+
+\subsection{Inserción de Imágenes}
+
+Para insertar una imagen en tu documento, utiliza el entorno \texttt{figure} y el comando \texttt{\textbackslash includegraphics}. Aquí tienes un ejemplo básico:
+
+\begin{verbatim}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{ruta/a/tu/imagen.png}
+    \caption{Descripción de la imagen.}
+    \label{fig:miImagen}
+\end{figure}
+\end{verbatim}
+
+Recuerda reemplazar \texttt{'ruta/a/tu/imagen.png'} con la ruta al archivo de imagen que deseas incluir. Puedes ajustar el tamaño de la imagen cambiando el valor de \texttt{width} y utilizar \texttt{\textbackslash caption} para proporcionar una descripción de la imagen. El comando \texttt{\textbackslash label} te permite referenciar la imagen en el texto utilizando \texttt{\textbackslash ref}.
+
+\subsection{Creación de Tablas}
+
+Las tablas se pueden crear utilizando el entorno \texttt{table} y \texttt{tabular}. A continuación, se muestra un ejemplo de cómo crear una tabla simple:
+
+\begin{verbatim}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|c|r|}
+        \hline
+        Columna 1 & Columna 2 & Columna 3 \\
+        \hline
+        Fila 1 & Dato 1 & Dato 2 \\
+        Fila 2 & Dato 3 & Dato 4 \\
+        \hline
+    \end{tabular}
+    \caption{Descripción de la tabla.}
+    \label{tab:miTabla}
+\end{table}
+\end{verbatim}
+
+En este ejemplo, \texttt{\textbackslash begin\{tabular\}\{|l|c|r|\}} define una tabla con tres columnas; los especificadores \texttt{l}, \texttt{c} y \texttt{r} indican la alineación del texto (izquierda, centro, derecha). Utiliza \texttt{\textbackslash hline} para insertar líneas horizontales y \texttt{\textbackslash caption} y \texttt{\textbackslash label} para la descripción y referencia de la tabla.
+
+\subsection{Inclusión de Figuras}
+
+Las figuras, que pueden incluir diagramas o gráficos, se insertan de manera similar a las imágenes. Si tu figura está compuesta por código LaTeX (por ejemplo, utilizando el paquete \texttt{tikz}), puedes incluirla dentro del entorno \texttt{figure}:
+
+\begin{verbatim}
+\begin{figure}[ht]
+    \centering
+    % Tu código TikZ aquí
+    \caption{Descripción de la figura.}
+    \label{fig:miFigura}
+\end{figure}
+\end{verbatim}
+
+Utiliza el entorno \texttt{figure} para mantener la consistencia en la forma en que las figuras y las imágenes se manejan y referencian en el documento.\\
+
+Estas instrucciones te permitirán enriquecer tu documento con elementos visuales que complementan y mejoran la presentación del contenido.
+
+
+\section{Citas y Bibliografía}
+
+Una parte esencial de la redacción académica es la correcta citación de las fuentes y la gestión de la bibliografía. Nuestra plantilla LaTeX facilita este proceso mediante el uso de BibTeX o BibLaTeX, que permiten organizar tus referencias en un archivo externo y citarlas fácilmente dentro de tu documento.
+
+\subsection{Uso de BibTeX}
+
+Para utilizar BibTeX, sigue estos pasos:
+
+\begin{enumerate}
+    \item Crea un archivo `.bib` que contenga todas tus referencias bibliográficas. Cada entrada en este archivo debe estar estructurada según el tipo de documento que estás citando (por ejemplo, artículo, libro, inproceedings, etc.). Aquí tienes un ejemplo de cómo podría verse una entrada:
+
+\begin{verbatim}
+@book{Zill2015,
+  title={Ecuaciones diferenciales con problemas con valores en la frontera},
+  author={Zill, Dennis G. and Wright, Warren S.},
+  year={2015},
+  edition={8},
+  publisher={Editorial XYZ}
+}
+\end{verbatim}
+
+    \item En el preámbulo de tu documento `.tex`, incluye las líneas necesarias para utilizar BibTeX. Esto generalmente implica usar el paquete `\textbackslash usepackage{natbib}` o `\textbackslash usepackage{biblatex}` y configurar el estilo de citación deseado.
+
+\begin{verbatim}
+\usepackage{natbib}
+\bibliographystyle{apa}
+\end{verbatim}
+
+    \item Dentro de tu documento, utiliza el comando `\cite{clave}` para citar las referencias. La "clave" es el identificador único asignado a cada entrada en tu archivo `.bib` (en el ejemplo anterior, `Zill2015`).
+
+    \item Al final de tu documento, incluye el comando `\textbackslash bibliography{nombre\_de\_tu\_archivo}` para indicar dónde se debe insertar la bibliografía. Asegúrate de reemplazar `nombre\_de\_tu\_archivo` con el nombre de tu archivo `.bib` sin la extensión.
+
+\begin{verbatim}
+\bibliography{mi_bibliografia}
+\end{verbatim}
+
+\end{enumerate}
+
+\subsection{Uso de BibLaTeX}
+
+Si prefieres usar BibLaTeX, el proceso es similar, pero con algunas diferencias en la configuración del preámbulo y en la forma en que se imprime la bibliografía:
+
+\begin{verbatim}
+\usepackage[backend=biber, style=authoryear]{biblatex}
+\addbibresource{mi_bibliografia.bib}
+\end{verbatim}
+
+Con BibLaTeX, usarías `\textbackslash printbibliography` en lugar de `\textbackslash bibliography` para imprimir la bibliografía en tu documento.\\
+
+Independientemente del sistema que elijas, gestionar tus referencias de esta manera te ayudará a mantener la consistencia en tus citaciones y referencias, asegurando que tu documento cumpla con los estándares académicos.
+
+\section{Comandos Personalizados y Ambientes}
+
+La plantilla incluye una serie de comandos personalizados diseñados para facilitar la redacción de contenido matemático y científico, mejorando así la eficiencia en la creación de documentos. A continuación, se describen algunos de estos comandos, junto con ejemplos de uso.
+
+\subsection{Conjuntos Numéricos}
+
+Para referenciar los principales conjuntos numéricos, se han definido los siguientes comandos:
+
+\begin{itemize}
+    \item \texttt{\textbackslash R} para los números reales: $\R$
+    \item \texttt{\textbackslash Z} para los números enteros: $\Z$
+    \item \texttt{\textbackslash Q} para los números racionales: $\Q$
+    \item \texttt{\textbackslash N} para los números naturales: $\N$
+    \item \texttt{\textbackslash I} para los números imaginarios: $\I$
+    \item \texttt{\textbackslash C} para los números complejos: $\C$
+\end{itemize}
+
+\subsection{Funciones Trigonométricas Inversas}
+
+Para las funciones trigonométricas inversas, se pueden utilizar los siguientes comandos:
+
+\begin{itemize}
+    \item \texttt{\textbackslash seni\{\}} para $\seni{x}$
+    \item \texttt{\textbackslash cosi\{\}} para $\cosi{x}$
+    \item \texttt{\textbackslash tani\{\}} para $\tani{x}$
+    \item \texttt{\textbackslash seci\{\}} para $\seci{x}$
+    \item \texttt{\textbackslash csci\{\}} para $\csci{x}$
+    \item \texttt{\textbackslash coti\{\}} para $\coti{x}$
+\end{itemize}
+
+\subsection{Cálculo y Análisis}
+
+Para operaciones de cálculo, se incluyen comandos para límites, derivadas, integrales, entre otros:
+
+\begin{itemize}
+    \item Límites: \texttt{\textbackslash limite\{f(x)\}\{x\}\{a\}\{+\}} para $\limite{f(x)}{x}{a}{+}$
+    \item Derivadas: \texttt{\textbackslash der\{f\}\{x\}\{n\}} para $\der{f}{x}{n}$
+    \item Integrales: \texttt{\textbackslash integral\{a\}\{b\}\{f(x)\}\{x\}} para $\integral{a}{b}{f(x)}{x}$
+\end{itemize}
+
+\subsection{Notación Vectorial y Más}
+
+Además, se proporcionan comandos para la notación vectorial y estructuras matemáticas más complejas:
+
+\begin{itemize}
+    \item Vector: \texttt{\textbackslash vec\{v\}} para $\vec{v}$
+    \item Paréntesis y corchetes: \texttt{\textbackslash ps\{\}} y \texttt{\textbackslash cs\{\}} para $\ps{x+y}$ y $\cs{x+y}$
+    \item Probabilidad: \texttt{\textbackslash prob\{A\}} para $\prob{A}$
+\end{itemize}
+
+Para utilizar estos comandos en tu documento, asegúrate de incluir el archivo `comandos.sty` en el preámbulo de tu documento LaTeX con el comando \texttt{\textbackslash usepackage\{comandos\}}. Estos comandos te permitirán escribir expresiones matemáticas de forma más eficiente y con un estilo consistente a lo largo de todo el documento.
+
+
+
+
+\section{Resolución de Problemas Comunes}
+
+A lo largo del proceso de redacción y compilación de documentos con \LaTeX, es posible que te encuentres con varios errores o problemas. Esta sección tiene como objetivo proporcionar soluciones a algunos de los problemas más comunes que pueden surgir al utilizar nuestra plantilla.
+
+\subsection{Errores de Compilación}
+
+\textbf{Problema:} Mensajes de error durante la compilación que impiden la generación del documento PDF.\\
+
+\textbf{Solución:} Revisa detenidamente el log de errores proporcionado por \LaTeX. Los errores de compilación suelen estar relacionados con comandos mal escritos, entornos no cerrados correctamente o paquetes faltantes. Verifica que todos los comandos estén escritos correctamente y que cada \texttt{\textbackslash begin\{entorno\}} tenga su correspondiente \texttt{\textbackslash end\{entorno\}}.
+
+\subsection{Referencias Cruzadas y Citas}
+
+\textbf{Problema:} Las referencias cruzadas o las citas aparecen como signos de interrogación (??) en el documento.\\
+
+\textbf{Solución:} Esto suele suceder cuando el documento necesita ser compilado múltiples veces. Primero, \LaTeX recopila la información sobre las referencias cruzadas y las citas, y luego las inserta en las compilaciones subsiguientes. Asegúrate de compilar tu documento al menos dos veces.
+
+\subsection{Problemas con Imágenes y Figuras}
+
+\textbf{Problema:} Las imágenes no se muestran o aparecen en lugares inesperados.\\
+
+\textbf{Solución:} Verifica que la ruta al archivo de imagen sea correcta y que el formato de la imagen sea compatible con \LaTeX (por ejemplo, PNG, JPEG, PDF). Utiliza las opciones del entorno \texttt{figure} como \texttt{[h!]} para sugerir a \LaTeX dónde colocar la figura. Sin embargo, recuerda que \LaTeX tiene sus propios algoritmos para la colocación de figuras, y puede que no siempre coloque la imagen exactamente donde la quieres.
+
+\subsection{Formato de Párrafos y Texto}
+
+\textbf{Problema:} Problemas con el espaciado entre párrafos, sangrías o formato de texto.\\
+
+\textbf{Solución:} Asegúrate de estar utilizando los comandos correctos para el formato de párrafos, como \texttt{\textbackslash par} para un nuevo párrafo o \texttt{\textbackslash newline} para una nueva línea. Para ajustar las sangrías, revisa los comandos de configuración del paquete \texttt{indentfirst} o ajusta manualmente las sangrías con \texttt{\textbackslash setlength\{\textbackslash parindent\}\{tamaño\}}.
+
+\subsection{Problemas con Paquetes}
+
+\textbf{Problema:} Errores relacionados con paquetes faltantes o conflictos entre paquetes.\\
+
+\textbf{Solución:} Asegúrate de que todos los paquetes utilizados en el preámbulo estén instalados en tu distribución \LaTeX. Si estás utilizando una plataforma en línea como Overleaf, verifica que los paquetes sean compatibles. En caso de conflictos entre paquetes, intenta cambiar el orden en que se cargan o consulta la documentación de los paquetes para encontrar soluciones específicas.\\
+
+Estos son solo algunos de los problemas comunes que podrías enfrentar al trabajar con \LaTeX y nuestra plantilla. Si encuentras un problema que no está cubierto aquí, te recomendamos buscar en foros en línea como [TeX - \LaTeX Stack Exchange](https://tex.stackexchange.com/), donde la comunidad de \LaTeX es muy activa y puede ofrecer soluciones y consejos adicionales.
+
+
+\section{Contribuciones y Mejoras}
+
+Valoramos enormemente la colaboración de la comunidad y acogemos con satisfacción cualquier contribución que ayude a mejorar y desarrollar aún más esta plantilla. Si tienes sugerencias, correcciones o mejoras, aquí te explicamos cómo puedes aportar al proyecto:
+
+\subsection{Reportar Problemas o Sugerir Mejoras}
+
+Si encuentras errores, problemas o tienes sugerencias para mejorar la plantilla, te invitamos a abrir un "Issue" en el repositorio de GitHub del proyecto:
+
+\begin{itemize}
+\item Visita \url{https://github.com/1u1s4/ECFM_notas}
+\item Navega hasta la sección "Issues".
+\item Haz clic en "New Issue" y describe detalladamente el problema o la mejora sugerida. Asegúrate de proporcionar toda la información relevante que pueda ayudar a comprender y abordar el issue.
+\end{itemize}
+
+\subsection{Contribuir Directamente con Código}
+
+Si deseas contribuir directamente con cambios o mejoras en la plantilla, puedes hacerlo mediante un "Pull Request" (PR):
+
+\begin{enumerate}
+\item Realiza un "fork" del repositorio en tu cuenta de GitHub.
+\item Clona el repositorio "forkeado" a tu máquina local.
+\item Crea una nueva rama para tus cambios: \texttt{git checkout -b nombre\_de\_tu\_rama}.
+\item Realiza tus cambios en la plantilla y realiza commits con descripciones claras de los cambios.
+\item Sube tu rama a GitHub: \texttt{git push origin nombre\_de\_tu\_rama}.
+\item Ve al repositorio original en GitHub y haz clic en "Pull Request". Selecciona tu rama y completa el formulario para explicar tus cambios.
+\item Envía el PR y espera a que el mantenedor del proyecto lo revise y comente o apruebe.
+\end{enumerate}
+
+\subsection{Documentación y Ejemplos}
+
+Mejorar la documentación o proporcionar ejemplos detallados de cómo utilizar la plantilla también son formas valiosas de contribuir. Si tienes ideas para expandir el manual de usuario o ejemplos de código que demuestren diferentes características de la plantilla, no dudes en compartirlos.
+
+\subsection{Comunidad y Colaboración}
+
+Fomentamos una comunidad abierta y colaborativa. Si tienes ideas para proyectos colaborativos que utilicen la plantilla o deseas organizar talleres o sesiones de trabajo en grupo, nos encantaría escuchar tus propuestas.
+
+Agradecemos a todos los que han contribuido hasta ahora al proyecto y esperamos con interés nuevas ideas y mejoras. Juntos podemos hacer que esta plantilla sea aún más útil y accesible para todos los usuarios.
+
+
+Para incluir los detalles de la Licencia MIT en la sección "Licencia" de tu manual, considera la siguiente redacción:
+
+\section{Licencia}
+
+Esta plantilla se distribuye bajo la Licencia MIT, una licencia permisiva que es breve y al punto. Esto significa que permite el uso, copia, modificación, fusión, publicación, distribución, sublicenciamiento y/o venta de copias del software original y cualquier trabajo derivado, bajo pocas restricciones.
+
+\subsection{Permisos}
+
+Bajo la Licencia MIT, se te otorga el permiso para:
+
+\begin{itemize}
+\item \textbf{Uso Comercial y Privado:} Puedes utilizar la plantilla en cualquier proyecto o producto, comercial o de otro tipo.
+\item \textbf{Modificación:} Tienes la libertad de alterar y cambiar la plantilla según tus necesidades.
+\item \textbf{Distribución:} Puedes compartir la plantilla y cualquier variación de la misma que hayas creado.
+\end{itemize}
+
+\subsection{Condiciones}
+
+La principal condición de la Licencia MIT es:
+
+\begin{itemize}
+\item \textbf{Atribución:} Debes incluir el aviso de derechos de autor original y el permiso de la Licencia MIT en todas las copias o partes sustanciales del software.
+\end{itemize}
+
+\subsection{Limitaciones}
+
+La licencia viene con limitaciones relacionadas con:
+
+\begin{itemize}
+\item La licencia y los materiales se proporcionan "tal cual", sin garantías explícitas o implícitas. Esto significa que los autores o titulares de los derechos de autor no se hacen responsables de cualquier reclamo, daño u otras responsabilidades.
+\end{itemize}
+
+\subsection{Texto Completo de la Licencia}
+
+Para leer el texto completo de la Licencia MIT y entender todos los términos y condiciones, por favor visita el siguiente enlace al repositorio de GitHub donde se aloja la plantilla:
+
+\begin{center}
+\url{https://github.com/1u1s4/ECFM_notas/blob/main/LICENSE}
+\end{center}
+
+Es importante revisar y comprender la Licencia MIT antes de usar, modificar o distribuir esta plantilla para asegurarte de que tus usos del material se alinean con los términos de la licencia.
+
+\end{document}

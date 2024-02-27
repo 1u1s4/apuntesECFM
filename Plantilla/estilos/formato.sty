@@ -1,0 +1,33 @@
+% mi_estilo.sty
+\ProvidesPackage{formato}[2024 Estilo personalizado para documentos LaTeX para notas de cursos de la ECFM.]
+
+% Paquetes
+\RequirePackage{dcolumn}
+\RequirePackage{bm}
+\RequirePackage[spanish]{babel}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{makeidx}
+\RequirePackage{graphicx}
+\RequirePackage{subfig}
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage[pdftex]{hyperref}
+\RequirePackage{multirow}
+\RequirePackage{float}
+\RequirePackage{booktabs}
+\RequirePackage{lmodern}
+\RequirePackage{titlesec}
+\RequirePackage{xargs}
+\RequirePackage{xcolor}
+
+
+% Configuración de página
+\pagestyle{empty}
+
+% Formato de secciones
+\titleformat{\section}{\centering\bfseries}{}{0em}{\MakeUppercase}[\titlerule]
+
+% Fin del archivo de estilo
+\endinput

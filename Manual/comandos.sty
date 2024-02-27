@@ -1,0 +1,107 @@
+% comandos.sty
+\ProvidesPackage{comandos}[2024 Comandos matemáticos personalizados]
+
+% Identificadores de conjuntos numericos
+\newcommand{\R}{\mathbb{R}}	% letra para conjunto de numeros reales
+\newcommand{\Z}{\mathbb{Z}} % letra para conjunto de numeros enteros
+\newcommand{\Q}{\mathbb{Q}} % letra para conjunto de numeros reales racionales
+\newcommand{\N}{\mathbb{N}} % letra para conjunto de numeros naturales
+\newcommand{\I}{\mathbb{I}} % letra para conjunto de numeros imaginarios
+\newcommand{\C}{\mathbb{C}} % letra para conjunto de numeros complejos
+% Funciones trigonometricas inversas
+\providecommand{\seni}[1]{\mathop{\rm sen^{-1}}\nolimits \ps{#1}} 
+\providecommand{\cosi}[1]{\mathop{\rm cos^{-1}}\nolimits \ps{#1}}
+\providecommand{\tani}[1]{\mathop{\rm tan^{-1}}\nolimits \ps{#1}}
+\providecommand{\seci}[1]{\mathop{\rm sec^{-1}}\nolimits \ps{#1}}
+\providecommand{\csci}[1]{\mathop{\rm csc^{-1}}\nolimits \ps{#1}}
+\providecommand{\coti}[1]{\mathop{\rm cot^{-1}}\nolimits \ps{#1}}
+% Potencias de funciones trigonometricas
+\providecommand{\potsen}[2]{\mathop{\rm sen^{#2}}\nolimits \ps{#1}}
+\providecommand{\potcos}[2]{\mathop{\rm cos^{#2}}\nolimits \ps{#1}}
+\providecommand{\pottan}[2]{\mathop{\rm tan^{#2}}\nolimits \ps{#1}}
+\providecommand{\potsec}[2]{\mathop{\rm sec^{#2}}\nolimits \ps{#1}}
+\providecommand{\potcsc}[2]{\mathop{\rm csc^{#2}}\nolimits \ps{#1}}
+\providecommand{\potcot}[2]{\mathop{\rm cot^{#2}}\nolimits \ps{#1}}
+% Calcul
+\providecommand{\limite}[4]{\lim_{#1  \to #2^{#4}}{#3}} % limite
+\providecommand{\der}[3]{\frac{d^{#3} #1}{d #2^{#3}}} % derivada de orden n, si el tercer campo se deja vacio no agrega el exponente
+\providecommand{\derpar}[3]{\frac{\partial^{#3} #1}{\partial #2^{#3}}} % derivada parcial de orden n, si el tercer campo se deja vacio no agrega el exponente
+\newcommand{\integral}[4]{\int_{#1}^{#2}{#3}\; \text{d#4}} % integral
+\providecommand{\intdoble}[7]{\int_{#1}^{#2}{\int_{#3}^{#4}{#5 \;\text{d#6} \;\text{d#7}}}} % integracion doble iterada
+\providecommand{\gradiente}[1]{\nabla #1=\vc{\derpar{#1}{x}{},\derpar{#1}{y}{},\derpar{#1}{z}{}}} % gradiente de una funcion
+% Diferencial total de una funcion
+% 2 variables
+\providecommand{\diftotdos}[3]{\frac{\partial #1}{\partial #2}d #2+\frac{\partial #1}{\partial #3}d #3}
+% 3 variables
+\providecommand{\diftottre}[4]{\frac{\partial #1}{\partial #2}d #2+\frac{\partial #1}{\partial #3}d #3+\frac{\partial #1}{\partial #4}d #4}
+% 4 variables
+\providecommand{\diftotcua}[5]{\frac{\partial #1}{\partial #2}d #2+\frac{\partial #1}{\partial #3}d #3+\frac{\partial #1}{\partial #4}d #4+\frac{\partial #1}{\partial #5}d #5}
+% 5 variables
+\providecommand{\diftotcin}[6]{\frac{\partial #1}{\partial #2}d #2+\frac{\partial #1}{\partial #3}d #3+\frac{\partial #1}{\partial #4}d #4+\frac{\partial #1}{\partial #5}d #5+\frac{\partial #1}{\partial #6}d #6}
+% 6 variables
+\providecommand{\diftotsei}[7]{\frac{\partial #1}{\partial #2}d #2+\frac{\partial #1}{\partial #3}d #3+\frac{\partial #1}{\partial #4}d #4+\frac{\partial #1}{\partial #5}d #5+\frac{\partial #1}{\partial #6}d #6+\frac{\partial #1}{\partial #7}d #7}
+% 7 variables
+\providecommand{\diftotsie}[8]{\frac{\partial #1}{\partial #2}d #2+\frac{\partial #1}{\partial #3}d #3+\frac{\partial #1}{\partial #4}d #4+\frac{\partial #1}{\partial #5}d #5+\frac{\partial #1}{\partial #6}d #6+\frac{\partial #1}{\partial #7}d #7+\frac{\partial #1}{\partial #8}d #8}
+% 8 variables
+\providecommand{\diftotoch}[9]{\frac{\partial #1}{\partial #2}d #2+\frac{\partial #1}{\partial #3}d #3+\frac{\partial #1}{\partial #4}d #4+\frac{\partial #1}{\partial #5}d #5+\frac{\partial #1}{\partial #6}d #6+\frac{\partial #1}{\partial #7}d #7+\frac{\partial #1}{\partial #8}d #8+\frac{\partial #1}{\partial #9}d #9}
+% Varios
+\newcommand{\tx}[1]{\text{#1}} % escribir texto en entorno matematico
+\newcommand{\raya}{\rule{2cm}{0.01cm}\\} % linea horizontal de 2cm
+\newcommand{\ds}{\displaystyle} % formatea el entorno matematico de una mejor manera en entornos donde no lucen bien
+\newcommand{\sen}{\mathop{\rm sen}\nolimits} % funcion seno
+\newcommand{\senh}{\mathop{\rm senh}\nolimits}	% funcion seno hiperbolico
+\newcommand{\arcsen}{\mathop{\rm arcsen}\nolimits} % funcion arcsen
+\newcommand{\arcsec}{\mathop{\rm arcsec}\nolimits} % funcion arcsec
+% Parentesis
+\providecommand{\ps}[1]{\left(#1\right)} % parentesis
+\providecommand{\cs}[1]{\left[#1\right]} % corchetes
+\providecommand{\ls}[1]{\left\{#1\right\}} % llaves
+\providecommand{\vc}[1]{\left<#1\right>} % caracter vectorial
+\providecommand{\abs}[1]{\lvert#1\rvert}% valor absoluto
+% Varios
+\providecommand{\serie}[3]{\sum_{#1}^{#2}{#3}} % serie
+\providecommand{\llaveabajo}[2]{\underbrace{#1}_{{\quad \mbox{#2}}}} % encierra una exprecion entre llaves desde abajo señalando texto
+\newcommand{\e}{e=\limite{n}{\infty}{\ps{1+\frac{1}{n}}^n}{}} % numero de euler definido como un limite
+\providecommand{\floor}[1]{\left\lfloor #1\right\rfloor} 
+\providecommand{\ceil}[1]{\left\lceil #1\right\rceil}
+% Notacion vectorial poniendo la letra en netrita
+\renewcommand{\vec}[1]{\mathbf{#1}} % vector
+\let\oldhat\hat
+\renewcommand{\hat}[1]{\oldhat{\mathbf{#1}}} % vecotr unitario
+% Llaves
+\providecommand{\llavesuno}[1]{\begin{cases}#1\end{cases}}
+\providecommand{\llavesdos}[2]{\begin{cases}#1\\#2\end{cases}}
+\providecommand{\llavestre}[3]{\begin{cases}#1\\#2\\#3\end{cases}}
+\providecommand{\llavescua}[4]{\begin{cases}#1\\#2\\#3\\#4\end{cases}}
+\providecommand{\llavescin}[5]{\begin{cases}#1\\#2\\#3\\#4\\#5\end{cases}}
+\providecommand{\llavessei}[6]{\begin{cases}#1\\#2\\#3\\#4\\#5\\#6\end{cases}}
+\providecommand{\llavessie}[7]{\begin{cases}#1\\#2\\#3\\#4\\#5\\#6\\#7\end{cases}}
+\providecommand{\llavesoch}[8]{\begin{cases}#1\\#2\\#3\\#4\\#5\\#6\\#7\\#8\end{cases}}
+\providecommand{\llavesnue}[9]{\begin{cases}#1\\#2\\#3\\#4\\#5\\#6\\#7\\#8\\#9\end{cases}}
+
+
+\newcommandx\ex[1]{\mathrm{e}^{#1}}
+\newcommandx\fx[2][1= ,2=f]{#2\ps{x_{#1},y_{#1}}}
+
+%-----------------------------------------------------------------------
+
+
+% EXPERIMENTOS
+
+
+\newcommand{\agua}{H$_2$O}
+
+\providecommand{\derdef}[4]{\left.\der{#1}{#2}{#3}\right|_{#2=#4}}
+
+\newcommand{\binnew}{(x+y)^r=\serie{k=0}{\infty}{\combinacion{r}{k}x^{r-k}y^k}}
+
+\providecommand{\combinacion}[2]{\left( \begin{matrix} #1 \\ #2 \end{matrix} \right) } % combinacion como una fraccion sin la raya de divicion
+
+\providecommand{\comb}[2]{{ _{ #1 }{ \tx{C} }_{#2  } }} % combinacion
+\providecommand{\perm}[2]{{ _{ #1 }{ \tx{P} }_{#2  } }} % permutacion
+
+\providecommand{\prob}[1]{\tx{P}\ps{#1}} % probabilidad
+
+
+% Fin del archivo de estilo
+\endinput
